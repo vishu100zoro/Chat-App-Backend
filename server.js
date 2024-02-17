@@ -28,14 +28,7 @@ connectDB();
 
 const server=require('http').createServer(app);
 const PORT=5001;
-const io=require('socket.io')(server,{
-    cors:{
-        origin:[process.env.FRONTEND_URL],
-        method:["GET","POST","PUT","DELETE"],
-    // allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials:true,
-    }
-})
+const io=require('socket.io')(server)
 
 
 
