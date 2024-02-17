@@ -36,6 +36,11 @@ app.get('/rooms',(req,res)=>{
     res.json(rooms);
 })
 
+
+app.get('/',(req,res)=>{
+    res.json("working server");
+})
+
 async function getLastMessagesFromRoom (room){
     let roomMessages = await Message.aggregate([
         {$match:{to:room}},
